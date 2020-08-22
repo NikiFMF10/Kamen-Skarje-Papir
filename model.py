@@ -3,25 +3,25 @@ import random
 class KamenSkarjePapir:
 
     def __init__(self):
-        self.izbira_računalnika = ''
+        self.izbira_racunalnika = ''
         self.izbira = ['Kamen', 'Škarje', 'Papir']
 
-    def kaj_izbere_računalnik (self):
-        self.kaj_izbere_računalnik = self.izbira[random.randit(0,2)]
-        return self.kaj_izbere_računalnik
+    def kaj_izbere_racunalnik (self):
+        self.kaj_izbere_racunalnik = self.izbira[random.randint(0,2)]
+        return self.kaj_izbere_racunalnik
 
-    def igralec (self, izbira, računalnik):
-        if izbira == 'Kamen' and računalnik == 'Škarje':
+    def igralec (self, izbira, racunalnik):
+        if izbira == 'Kamen' and racunalnik == 'Škarje':
             return ('Zmagal si!')
-        elif izbira == 'Papir' and računalnik == 'Kamen':
+        elif izbira == 'Papir' and racunalnik == 'Kamen':
             return  ('Zmagal si!')
-        elif izbira == 'Škarje' and računalnik == 'Papir':
+        elif izbira == 'Škarje' and racunalnik == 'Papir':
             return ('Zmagal si!')
-        elif izbira == 'Škarje' and računalnik == 'Kamen':
+        elif izbira == 'Škarje' and racunalnik == 'Kamen':
             return ('Izgubil si. Poskusi ponovno!')
-        elif izbira == 'Kamen' and računalnik == 'Papir':
+        elif izbira == 'Kamen' and racunalnik == 'Papir':
             return ('Izgubil si. Poskusi ponovno!')
-        elif izbira == 'Papir' and računalnik == 'Škarje':
+        elif izbira == 'Papir' and racunalnik == 'Škarje':
             return ('Izgubil si. Poskusi ponovno!')
         else:
             return ('Neodločeno. Naslednja igra je tvoja!')
