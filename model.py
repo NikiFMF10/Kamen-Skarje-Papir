@@ -66,8 +66,8 @@ class Igra:
         return zmag
 
 
-        self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag_igralca) + 'krat.')
-        self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_zmag_racunalnika) + 'krat.')
+        self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag) + 'krat.')
+        self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_porazov) + 'krat.')
 
 
 def nova_igra():
