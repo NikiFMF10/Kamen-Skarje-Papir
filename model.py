@@ -1,53 +1,69 @@
 import random
 
+ZMAGA = 'Z'
+PORAZ = 'P'
+
+
 class Igra:
 
-    def __init__(self):
+    def __init__(self, stevilo_zmag=0, stevilo_porazov=0):
         self.izbira_racunalnika = ''
         self.izbira = ['Kamen', 'Škarje', 'Papir']
 
-
-    def kaj_izbere_racunalnik (self):
-        self.izbira_racunalnika = self.izbira[random.randint(0,2)]
-        return self.izbira_racunalnika
+        self.stevilo_zmag = stevilo_zmag
+        self.stevilo_porazov = stevilo_porazov
 
 
-    def igralec (self, izbira, racunalnik):
-        if izbira == 'Kamen' and racunalnik == 'Škarje':
+    def igralec (self, izbira):
+        racunalnik = self.kaj_izbere_racunalnik()
+
+        if ((izbira == 'Kamen' and racunalnik == 'Škarje') or
+        (izbira == 'Papir' and racunalnik == 'Kamen') or
+        (izbira == 'Škarje' and racunalnik == 'Papir')):
+            self.stevilo_zmag += 1
             return ('Zmagal si!')
-        elif izbira == 'Papir' and racunalnik == 'Kamen':
-            return  ('Zmagal si!')
-        elif izbira == 'Škarje' and racunalnik == 'Papir':
-            return ('Zmagal si!')
-        elif izbira == 'Škarje' and racunalnik == 'Kamen':
+
+        elif ((izbira == 'Škarje' and racunalnik == 'Kamen') or
+        (izbira == 'Kamen' and racunalnik == 'Papir') or
+        (izbira == 'Papir' and racunalnik == 'Škarje')):
+            self.stevilo_porazov += 1
             return ('Izgubil si. Poskusi ponovno!')
-        elif izbira == 'Kamen' and racunalnik == 'Papir':
-            return ('Izgubil si. Poskusi ponovno!')
-        elif izbira == 'Papir' and racunalnik == 'Škarje':
-            return ('Izgubil si. Poskusi ponovno!')
+
         else:
             return ('Neodločeno. Naslednja igra je tvoja!')
     
-    
-    def racunalnik_izbere():
-        rac = Igra.kaj_izbere_racunalnik()
-        return rac
 
+        if self.zmaga():
+            return ZMAGA
+
+        if self.poraz():
+            return PORAZ
+
+
+    def kaj_izbere_racunalnik(self):
+        self.izbira_racunalnika = self.izbira[random.randint(0,2)]
+        return self.izbira_racunalnika
+        print (self.izbira_racunalnika)
+
+    
+    def zmaga(self):
+        if self.stevilo_zmag == 3:
+            return True
+        else:
+            return False
+
+    
+    def poraz(self):
+        if self.stevilo_porazov == 3:
+            return True
+        else:
+            return False
+    
 
     def zmagovalec (izbira, racunalnik):
-        zmag = Igra.igralec(izbira, racunalnik)
+        igra = model.Igra()
+        zmag = igra.igralec(izbira, racunalnik)
         return zmag
-
-
-    def stevilo_zmag (self, izbira, racunalnik):
-        udelezenec = Igra.igralec(izbira, racunalnik)
-        if udelezenec == 'Zmagal si!':
-            self.stevilo_zmag_igralca += 1
-        elif udelezenec == 'Izgubil si. Poskusi ponovno!':
-            self.stevilo_zmag_racunalnika += 1
-        else:
-            self.stevilo_zmag_igralca += 0
-            self.stevilo_zmag_racunalnika += 0
 
 
         self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag_igralca) + 'krat.')
@@ -57,8 +73,10 @@ class Igra:
 def nova_igra():
     return Igra()
 
+Igra().igralec('Škarje')
 
-ZACETEK = 'Z'
+
+ZACETEK = 'A'
 class KamenSkarjePapir:
     
     def __init__(self):
