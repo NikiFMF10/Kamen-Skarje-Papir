@@ -7,8 +7,8 @@ class KamenSkarjePapir:
         self.izbira = ['Kamen', 'Škarje', 'Papir']
 
     def kaj_izbere_racunalnik (self):
-        self.kaj_izbere_racunalnik = self.izbira[random.randint(0,2)]
-        return self.kaj_izbere_racunalnik
+        self.izbira_racunalnika = self.izbira[random.randint(0,2)]
+        return self.izbira_racunalnika
 
     def igralec (self, izbira, racunalnik):
         if izbira == 'Kamen' and racunalnik == 'Škarje':
