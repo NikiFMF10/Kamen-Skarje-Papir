@@ -1,16 +1,13 @@
 import random
 
-ZMAGA = 'Z'
-PORAZ = 'P'
-
-class Igra:
+class KamenSkarjePapir:
 
     def __init__(self):
         self.izbira_računalnika = ''
         self.izbira = ['Kamen', 'Škarje', 'Papir']
 
     def kaj_izbere_računalnik (self):
-        self.kaj_izbere_računalnik = random.choice(self.izbira)
+        self.kaj_izbere_računalnik = self.izbira[random.randit(0,2)]
         return self.kaj_izbere_računalnik
 
     def igralec (self, izbira, računalnik):
@@ -28,13 +25,3 @@ class Igra:
             return ('Izgubil si. Poskusi ponovno!')
         else:
             return ('Neodločeno. Naslednja igra je tvoja!')
-
-    def dvoboj(self):
-        if self.zmaga():
-            return ZMAGA
-
-        if self.poraz():
-            return PORAZ
-
-def nova_igra():
-    return Igra
