@@ -27,37 +27,51 @@ class Igra:
             return ('Izgubil si. Poskusi ponovno!')
         else:
             return ('Neodločeno. Naslednja igra je tvoja!')
-
-
-class KamenSkarjePapir:
     
-    def __init__(self):
-        self.igra = {}
-
-
+    
     def racunalnik_izbere():
-    igra = model.Igra()
-    rac = igra.kaj_izbere_racunalnik()
-    return rac
+        rac = Igra.kaj_izbere_racunalnik()
+        return rac
 
 
     def zmagovalec (izbira, racunalnik):
-    igra = model.Igra()
-    zmag = igra.igralec(izbira, racunalnik)
-    return zmag
+        zmag = Igra.igralec(izbira, racunalnik)
+        return zmag
 
 
     def stevilo_zmag (self, izbira, racunalnik):
-    igra = model.Igra()
-    udelezenec = igra.igralec(izbira, racunalnik)
-    if udelezenec == 'Zmagal si!':
-        self.stevilo_zmag_igralca += 1
-    elif udelezenec == 'Izgubil si. Poskusi ponovno!':
-        self.stevilo_zmag_racunalnika += 1
-    else:
-        self.stevilo_zmag_igralca += 0
-        self.stevilo_zmag_racunalnika += 0
+        udelezenec = Igra.igralec(izbira, racunalnik)
+        if udelezenec == 'Zmagal si!':
+            self.stevilo_zmag_igralca += 1
+        elif udelezenec == 'Izgubil si. Poskusi ponovno!':
+            self.stevilo_zmag_racunalnika += 1
+        else:
+            self.stevilo_zmag_igralca += 0
+            self.stevilo_zmag_racunalnika += 0
 
+
+        self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag_igralca) + 'krat.')
+        self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_zmag_racunalnika) + 'krat.')
+
+
+def nova_igra():
+    return Igra()
+
+
+ZACETEK = 'Z'
+class KamenSkarjePapir:
     
-    self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag_igralca) + 'krat.')
-    self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_zmag_racunalnika) + 'krat.')
+    def __init__(self):
+        self.igre = {}
+
+    def prost_id_igre(self):
+        if len(self.igre) == 0:
+            return 0
+        else:
+            return max(self.igre.keys()) + 1
+
+    def nova_igra(self):
+        id_igre = self.prost_id_igre()
+        igra = nova_igra()
+        self.igre[id_igre] = (igra, ZACETEK)
+        return id_igre
