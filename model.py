@@ -42,8 +42,8 @@ class Igra:
 
     def kaj_izbere_racunalnik(self):
         self.izbira_racunalnika = self.izbira[random.randint(0,2)]
-        return self.izbira_racunalnika
         print (self.izbira_racunalnika)
+        return self.izbira_racunalnika
 
     
     def zmaga(self):
