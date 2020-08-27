@@ -58,16 +58,22 @@ class Igra:
             return True
         else:
             return False
+
+    
+    def koliko_zmag(self, izbira):
+        return self.stevilo_zmag
+
+    def koliko_porazov(self, izbira):
+        return self.stevilo_porazov
     
 
-    def zmagovalec (izbira, racunalnik):
-        igra = model.Igra()
-        zmag = igra.igralec(izbira, racunalnik)
-        return zmag
+    #def zmagovalec (izbira, racunalnik):
+        #zmag = Igra.igralec(izbira, racunalnik)
+        #return zmag
 
 
-        self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag) + 'krat.')
-        self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_porazov) + 'krat.')
+        #self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag) + 'krat.')
+        #self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_porazov) + 'krat.')
 
 
 def nova_igra():
@@ -93,3 +99,8 @@ class KamenSkarjePapir:
         igra = nova_igra()
         self.igre[id_igre] = (igra, ZACETEK)
         return id_igre
+
+    def igralec(self, id_igre, izbira):
+        igra = self.igre[id_igre][0]
+        novo_stanje = igra.igralec(izbira)
+        self.igre[id_igre] = (igra, novo_stanje)    
