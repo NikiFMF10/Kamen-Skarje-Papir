@@ -21,7 +21,7 @@ def pokazi_igro(id_igre):
 
 @bottle.post('/igra/<id_igre:int>/')
 def igralec(id_igre):
-    izbira = bottle.request.forms.getunicode("beseda")
+    izbira = bottle.request.forms.getunicode("izbira")
     model.igralec(id_igre, izbira)
     bottle.redirect('/igra/{0}/'.format(id_igre))
 
