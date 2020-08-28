@@ -2,7 +2,7 @@
 % rebase('base.tpl', title='KamenŠkarjePapir')
 
 
-<h1>Naslov</h1>
+<h1>Kamen, Škarje, Papir</h1>
 
     <blockquote>
      besedilo
