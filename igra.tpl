@@ -18,7 +18,7 @@ Porazi: <b>{{igra.koliko_porazov(None)}}</b>
     <h1><img src="/img/Zmaga.png" alt="NEKI"/></h1>
 
     <form action="/igra/" method="post">
-        <button type="submit">Nova_igra</button>
+        <button type="submit">Nova igra</button>
     </form>
 
 % elif poskus == model.PORAZ:
@@ -26,14 +26,13 @@ Porazi: <b>{{igra.koliko_porazov(None)}}</b>
     <h1><img src="/img/Poraz.jpg" alt="NEKI"/></h1>
 
     <form action="/igra/" method="post">
-        <button type="submit">Nova_igra</button>
+        <button type="submit">Nova igra</button>
     </form>
 
 % else:
 
     <form action="/igra/{{id_igre}}/" method="POST">
         Izbira: <input type="text" name="izbira">
-        <button type="submit">Nova_igra</button>
     </form>
 
 % end
