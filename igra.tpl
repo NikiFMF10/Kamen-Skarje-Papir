@@ -15,7 +15,7 @@ Porazi: <b>{{igra.koliko_porazov(None)}}</b>
 
 % if poskus == model.ZMAGA:
 
-    <h1><img src="/img/Zmaga.jpg" alt="NEKI"/></h1>
+    <h1><img src="/img/Zmaga.png" alt="NEKI"/></h1>
 
     <form action="/igra/" method="post">
         <button type="submit">Nova_igra</button>
