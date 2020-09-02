@@ -37,7 +37,6 @@ class Igra:
 
     def kaj_izbere_racunalnik(self):
         self.izbira_racunalnika = self.izbira[random.randint(0,2)]
-        print (self.izbira_racunalnika)
         return self.izbira_racunalnika
 
     
@@ -62,19 +61,11 @@ class Igra:
         return self.stevilo_porazov
     
 
-    #def zmagovalec (izbira, racunalnik):
-        #zmag = Igra.igralec(izbira, racunalnik)
-        #return zmag
-
-
-        #self.tekst1.config(tekst = 'Igralec je zmagal' + str(self.stevilo_zmag) + 'krat.')
-        #self.tekst2.config(tekst = 'Računalnik je zmagal' + str(self.stevilo_porazov) + 'krat.')
-
-
 def nova_igra():
     return Igra()
 
-Igra().igralec('Škarje')
+
+#Igra().igralec('Škarje') 
 
 
 ZACETEK = 'A'
