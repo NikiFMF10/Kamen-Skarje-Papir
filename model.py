@@ -21,16 +21,11 @@ class Igra:
         (izbira == 'Papir' and racunalnik == 'Kamen') or
         (izbira == 'Škarje' and racunalnik == 'Papir')):
             self.stevilo_zmag += 1
-            return ('Zmagal si!')
 
         elif ((izbira == 'Škarje' and racunalnik == 'Kamen') or
         (izbira == 'Kamen' and racunalnik == 'Papir') or
         (izbira == 'Papir' and racunalnik == 'Škarje')):
             self.stevilo_porazov += 1
-            return ('Izgubil si. Poskusi ponovno!')
-
-        else:
-            return ('Neodločeno. Naslednja igra je tvoja!')
     
 
         if self.zmaga():

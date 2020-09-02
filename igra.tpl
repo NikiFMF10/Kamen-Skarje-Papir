@@ -31,7 +31,7 @@ Porazi: <b>{{igra.koliko_porazov(None)}}</b>
 
 % else:
 
-    <form action="/igra/" method="POST">
+    <form action="/igra/{{id_igre}}/" method="POST">
         Izbira: <input type="text" name="izbira">
         <button type="submit">Nova_igra</button>
     </form>
