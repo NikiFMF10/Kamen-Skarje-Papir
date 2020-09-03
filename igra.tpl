@@ -12,14 +12,14 @@
     našo izbrano možnost. Če pride do neodločenega izida runde, program ne bo zabeležil
     ne zmage in ne poraza, tako da se igra nadaljuje dalje.
     
-    Paziti je treba da vnesemo dane možnosti z veliko začetnico, saj v nasprotnem primeru
+    Paziti je treba, da vnesemo dane možnosti z veliko začetnico, saj v nasprotnem primeru
     se ne bo nič zgodilo, če bomo vnašali kar koli drugega. Torej z igro lahko nadaljujemo
     naprej.
     </blockquote>
 
 
     <blockquote>
-    Cilj igre je premagati računalnik tri runde, da smo zmagali celotno igro.
+    Cilj igre je premagati računalnik tri runde, da zmagaš celotno igro.
     </blockquote>
 
 
