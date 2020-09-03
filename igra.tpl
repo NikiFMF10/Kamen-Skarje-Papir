@@ -19,7 +19,8 @@
 
 
     <blockquote>
-    Cilj igre je premagati računalnik tri runde, da zmagaš celotno igro.
+    Cilj igre je premagati računalnik trikrat, da zmagaš celotno igro. V primeru, da izgubiš
+    trikrat, si nažalost izgubil. Vendar ne izgubi upanja, naslednja igra bo tvoja!
     </blockquote>
 
 

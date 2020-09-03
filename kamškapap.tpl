@@ -11,7 +11,7 @@ Uživaj v igranju najboljše igre in želim veliko sreče pri igranju!
 <blockquote>
 
 <form action="/igra/" method="post">
-    <button type="submit">Nova_igra</button>
+    <button type="submit">Nova igra</button>
 </form>
 
 <blockquote>
